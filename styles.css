@@ -15,7 +15,7 @@ body {
 
 header {
     background-color: white;
-    height: 5vw;
+    height: 80px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -29,7 +29,7 @@ header div.logo-box {
 
 header a.logo {
     color: black;
-    font-size: 1.6em;
+    font-size: 1.6rem;
     font-weight: 700;
     text-decoration: none;
 }
@@ -38,22 +38,22 @@ header nav.menu-box {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 5%;
-    width: 40vh;
+    margin-right: 4%;
+    width: 30%;
 }
 
 header nav.menu-box a.menu {
     color: grey;
-    font-size: 0.8em;
+    font-size: 0.8rem;
     font-weight: 300;
     text-decoration: none;
     transition-duration: 0.3s;
-    margin: 5%;
+    margin: 4%;
 }
 
 header nav.menu-box a.menu:hover {
     color: black;
-    font-size: 1.1em;
+    font-size: 1.1rem;
     font-weight: 900;
     text-decoration: none;
     box-sizing: border-box;
@@ -66,7 +66,7 @@ main div.banner-box {
     object-fit: cover;
     display: flex;
     align-items: center;
-    height: 40vw;
+    height: 60vh;
 }
 
 main div.banner-box div.texto {
@@ -74,7 +74,7 @@ main div.banner-box div.texto {
     flex-direction: column;
 }
 main div.banner-box div.texto h1 {
-    font-size: 3.8em;
+    font-size: 3.8rem;
     font-weight: 700;
     color: white;
     width: 100%;
@@ -82,19 +82,18 @@ main div.banner-box div.texto h1 {
 }
 
 main div.banner-box div.texto a {
-    font-size: 1.7em;
+    font-size: 1.7rem;
     font-weight: 200;
     color: white;
     text-decoration: none;
     text-transform: uppercase;
-    margin: 0 0 0 4%;
+    margin-left: 4%;
 }
 
 main section.main-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     margin: 4%;
 }
 
@@ -105,18 +104,18 @@ main section.main-box img.img-box {
 footer section.footer-box {
     background-color: #f6f6f6;
     width: 100%;
-    height: 12vh;
+    height: 128px;
     display: flex;
     justify-content: center;
 }
 
 footer div.icons-box {
-    width: 350px;
+    width: 20%;
     display: flex;
     align-self: auto;
     justify-content: center;
     align-items: center;
-    margin: 0 0 0 -250px;
+    margin: 0 0 0 -15%;
 }
 
 footer div.icons-box img {
@@ -125,7 +124,7 @@ footer div.icons-box img {
 }
 
 footer p#copyright {
-    font-size: 0.9em;
+    font-size: 0.9rem;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -134,7 +133,7 @@ footer p#copyright {
 
 footer div.footer-text {
     color: grey;
-    font-size: 0.7em;
+    font-size: 0.7rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
