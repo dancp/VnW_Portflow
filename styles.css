@@ -15,10 +15,18 @@ body {
 
 header {
     background-color: white;
-    height: 80px;
+    height: 10vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        height: 4vh;
+        flex-direction: row-reverse;
+        justify-content: start;
+    }
 }
 
 header div.logo-box {
@@ -34,29 +42,75 @@ header a.logo {
     text-decoration: none;
 }
 
-header nav.menu-box {
+header div.menu-box-dropdown nav.menu-box {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 4%;
-    width: 30%;
+    margin-right: 5vw;
+    width: 40vw;
+    height: 10vh;
 }
 
-header nav.menu-box a.menu {
+header div.menu-box-dropdown nav.menu-box a.menu {
     color: grey;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 300;
     text-decoration: none;
     transition-duration: 0.3s;
     margin: 4%;
 }
 
-header nav.menu-box a.menu:hover {
+header div.menu-box-dropdown nav.menu-box a.menu:hover {
     color: black;
     font-size: 1.1rem;
     font-weight: 900;
     text-decoration: none;
     box-sizing: border-box;
+}
+
+@media screen and (min-width: 600px) {
+    header div.menu-box-dropdown span {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    header div.menu-box-dropdown nav.menu-box {
+        margin-right: 15vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header div.logo-box {
+        font-size: 1.4rem;
+        margin-left: 10%;
+    }
+
+    header div.menu-box-dropdown {
+        display: inline-block;
+        position: relative;
+    }
+
+    header div.menu-box-dropdown span {
+        background-color: black;
+        color: black;
+        display: inline-block;
+        width: 15vh;
+        height: 4vh;
+    }
+    header div.menu-box-dropdown nav.menu-box {
+        display: none;
+        position: absolute;
+        width:20vh;
+        height: 15vh;
+        background-color: white;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding:12px 16px;
+        z-index: 1;
+    }
+    header div.menu-box-dropdown:hover nav.menu-box {
+        display: block;
+    }
 }
 
 main div.banner-box {
@@ -69,25 +123,53 @@ main div.banner-box {
     height: 60vh;
 }
 
-main div.banner-box div.texto {
-    display: flex;
-    flex-direction: column;
+@media screen and (max-width: 600px) {
+    main div.banner-box {
+        background-image: url("imgs/laranja2.png");
+        height: 96vh;
+        align-items: flex-end;
+    }
 }
+
+main div.banner-box div.texto {
+    margin-left: 5%;
+}
+
 main div.banner-box div.texto h1 {
     font-size: 3.8rem;
     font-weight: 700;
     color: white;
     width: 100%;
-    margin: 3% 0 5% 4%;
+    margin-bottom: 5%;
 }
 
 main div.banner-box div.texto a {
-    font-size: 1.7rem;
+    font-size: 1.7em;
     font-weight: 200;
     color: white;
     text-decoration: none;
     text-transform: uppercase;
-    margin-left: 4%;
+}
+
+@media screen and (max-width: 1170px) {
+    main div.banner-box div.texto h1 {
+        font-size: 2.2rem;
+    }
+    main div.banner-box div.texto a {
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main div.banner-box div.texto {
+        margin: 0% 0% 10% 15%;
+    }
+    main div.banner-box div.texto h1 {
+        font-size: 4.4rem;
+    }
+    main div.banner-box div.texto a {
+        font-size: 1.3em;
+    }
 }
 
 main section.main-box {
@@ -137,4 +219,65 @@ footer div.footer-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+@media screen and (max-width: 1170px) {
+    footer div.icons-box {
+        width: 35%;
+        margin: 0 0 0 5%;
+    }
+    footer div.icons-box img {
+        height: 20px;
+        margin: 10px;
+    }
+    footer p#copyright {
+        margin: 0 2% 0 5%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    footer section.footer-box2 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    footer section.footer-box {
+        display: none;
+    }
+    footer div.icons-box2 {
+        background-color: #7FDBD4;
+        display: flex;
+        width: 70vw;
+        margin: auto;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 10px 20px 10px 20px;
+        margin-top: 4vh;
+        margin-bottom: 4vh;
+    }
+    footer section.footer-box2 div.footer-text2 {
+        display: flex;
+        align-items: center;
+        width: 70vw;
+        margin: auto;
+        margin-bottom: 2vh;
+    }
+    footer section.footer-box2 div.footer-text2 div.texto > p#copyright2 {
+        color: black;
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+    footer section.footer-box2 div.footer-text2 div.texto p {
+        color: grey;
+        font-size: 0.7rem;
+    }
+    footer section.footer-box2 div.button a {
+        font-weight: 200;
+        color: #CCCCCC;
+        background-color: #333333;
+        text-align: center;
+        padding: 5px 20px 5px 20px;
+        text-decoration: none;
+    }
 }
