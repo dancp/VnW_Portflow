@@ -15,119 +15,121 @@ body {
 }
 
 /*---> HEADER <---*/
-header {
+header nav.navbar {
     background-color: white;
-    height: 10vh;
-    width: 100%;
     display: flex;
     justify-content: space-between;
-}
-
-header div.logo-box {
-    display: flex;
     align-items: center;
-    margin-left: 4%;
+    height: 10vh;
+    width: 85vw;
+    margin: 0 auto;
 }
 
-header a.logo {
+header nav.navbar a.nav-logo {
     color: black;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 700;
     text-decoration: none;
 }
 
-header div.menu-hamburger-box nav.menu-box {
+header nav.navbar ul.nav-menu {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    margin-right: 5vw;
-    width: 40vw;
-    height: 10vh;
 }
 
-header div.menu-hamburger-box nav.menu-box a {
+header nav.navbar ul.nav-menu li.nav-item {
+    margin-left: 2rem;
+    list-style: none;
+}
+
+header nav.navbar ul.nav-menu li.nav-item a.nav-link {
     color: grey;
     font-size: 1rem;
     font-weight: 300;
     text-decoration: none;
     transition-duration: 0.3s;
-    margin: 4%;
 }
 
-header div.menu-hamburger-box nav.menu-box a:hover {
+header nav.navbar ul.nav-menu li.nav-item a.nav-link:hover {
     color: black;
     font-size: 1.1rem;
     font-weight: 900;
     text-decoration: none;
-    box-sizing: border-box;
+}
+
+header nav.navbar .hamburger {
+    display: none;
+}
+
+header nav.navbar .hamburger span.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
 }
 
 /*---> RESPONSIVE HEADER <---*/
-@media screen and (max-width: 1280px) {
-    header div.menu-hamburger-box nav.menu-box {
-        margin-right: 15vw;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    header div.menu-hamburger-box span {
-        display: none;
-    }
-}
-
 @media screen and (max-width: 768px) {
-    header {
+    header nav.navbar {
+        width: 100vw;
         height: 4vh;
         flex-direction: row-reverse;
         justify-content: start;
     }
-    header div.logo-box {
-        font-size: 1.4rem;
-        margin-left: 10%;
+    header nav.navbar a.nav-logo {
+        font-size: 1.6rem;
+        margin-left: 3rem;
     }
-    header div.menu-hamburger-box {
-        display: inline-block;
-        position: relative;
-    }
-    header div.menu-hamburger-box span {
-        background-color: black;
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        width: 30vw;
-        height: 4vh;
-    }
-    header div.menu-hamburger-box span img {
-        width: 20%;
-    }
-    header div.menu-hamburger-box nav.menu-box {
-        display: none;
-        position: absolute;
+    header nav.navbar ul.nav-menu {
+        position: fixed;
+        top: -100%;
+        flex-direction: column;
+        background-color: #fff;
         width: 100%;
-        height: 30vh;
-        background-color: white;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        padding: 0 8% 0 0;
-        z-index: 1;
-    }
-    header div.menu-hamburger-box nav.menu-box a{
-        background-image: linear-gradient(#ffffff,#00000015);
-        font-size: 1.2rem;
-        display: inline-block;
         text-align: center;
-        width: 100%;
+        transition: 0.3s;
+        box-shadow: 0 30px 27px rgba(0, 0, 0, 0.05);
     }
-    header div.menu-hamburger-box nav.menu-box a:hover {
-        font-size: 1.2rem;
+    header nav.navbar ul.nav-menu.active {
+        left: 0;
+        top: 4vh;
     }
-    header div.menu-hamburger-box:hover nav.menu-box {
+    header nav.navbar ul.nav-menu li.nav-item {
+        margin: 2rem 0;
+
+    }
+    header nav.navbar ul.nav-menu li.nav-item a.nav-link {
+        font-size: 1.5rem;
+        padding: 20px 50px;
+    }
+    header nav.navbar ul.nav-menu li.nav-item a.nav-link:hover {
+        font-size: 1.5rem;
+    }
+    header nav.navbar .hamburger {
         display: block;
+        cursor: pointer;
+        background-color: black;
+        height: 4vh;
+        width: 150px;
+    }
+    header nav.navbar .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    header nav.navbar .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    header nav.navbar .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
 
-@media screen and (max-width: 414px) {
-    header div.menu-hamburger-box nav.menu-box  {
-        height: 30vh;
+@media screen and (max-width: 576px) {
+    header nav.navbar a.nav-logo {
+        font-size: 1.4rem;
+        margin-left: 2rem;
     }
 }
 
@@ -142,19 +144,19 @@ main section.banner-box {
     height: 60vh;
 }
 
-main section.banner-box div.texto {
-    margin-left: 5%;
+main section.banner-box .banner-txt {
+    width: 85vw;
+    margin: 0 auto;
 }
 
-main section.banner-box div.texto h1 {
+main section.banner-box .banner-txt h1 {
     font-size: 3.8rem;
     font-weight: 700;
     color: white;
-    width: 100%;
     margin-bottom: 5%;
 }
 
-main section.banner-box div.texto a {
+main section.banner-box .banner-txt a {
     font-size: 1.7em;
     font-weight: 200;
     color: white;
@@ -164,10 +166,10 @@ main section.banner-box div.texto a {
 
 /*---> RESPONSIVE MAIN BANNER <---*/
 @media screen and (max-width: 1280px) {
-    main section.banner-box div.texto h1 {
+    main section.banner-box .banner-txt h1 {
         font-size: 2.5rem;
     }
-    main section.banner-box div.texto a {
+    main section.banner-box .banner-txt a {
         font-size: 1.5em;
     }
 }
@@ -178,110 +180,136 @@ main section.banner-box div.texto a {
         height: 96vh;
         align-items: flex-end;
     }
-    main section.banner-box div.texto {
-        margin: 0% 0% 10% 15%;
+    main section.banner-box .banner-txt {
+        width: 80vw;
+        margin-bottom: 4rem;
     }
-    main section.banner-box div.texto h1 {
-        font-size: 4.4rem;
+    main section.banner-box .banner-txt h1 {
+        font-size: 3.5rem;
     }
-    main section.banner-box div.texto a {
-        font-size: 1.3em;
+    main section.banner-box .banner-txt a {
+        font-size: 1em;
     }
 }
 
-@media screen and (max-width: 414px) {
-    main section.banner-box div.texto {
-        margin: 0% 0% 20% 10%;
+@media screen and (max-width: 576px) {
+    main section.banner-box .banner-txt h1 {
+        font-size: 3rem;
     }
-    main section.banner-box div.texto h1 {
-        font-size: 3.6rem;
-    }
-    main section.banner-box div.texto a {
+    main section.banner-box .banner-txt a {
         font-size: 1em;
     }
 }
 
 /*---> MAIN <---*/
-main section.main-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 4%;
+main section.main-container {
+    width: 85vw;
+    margin: 0 auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
 }
 
-main section.main-box img {
-    margin: 5px;
+main section.main-container .main-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 10px;
+}
+
+main section.main-container .main-box img {
+    width: 100%;
 }
 
 /*---> RESPONSIVE MAIN <---*/
 @media screen and (max-width: 768px) {
-    main section.main-box img  {
-        width: 80%;
+    main section.main-container {
+        margin-top: 7vh;
+        margin-bottom: 3vh;
+    }
+    main section.main-container {
+        width: 80vw;
+    }
+    main section.main-container .main-box {
+        grid-gap: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    main section.main-container {
+        margin-top: 7vh;
+        margin-bottom: 5vh;
+    }
+    main section.main-container .main-box {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
 
 /*---> FOOTER <---*/
 footer {
     background-color: #f6f6f6;
-    width: 100%;
-    height: 128px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-footer div.icons-box {
-    width: 20%;
+footer section.footer {
     display: flex;
-    align-self: auto;
-    justify-content: center;
     align-items: center;
-    width: 30vw;
-    margin: 0 0 0 -15%;
+    width: 85vw;
+    height: 10vh;
+    margin: 0 auto;
 }
 
-footer div.icons-box img {
+footer section.footer .icons-box {
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+footer section.footer .icons-box img {
     height: 25px;
-    margin: 15px;
+    margin: 15px 30px 15px 0;
 }
 
-footer div.responsive-box div.footer-texto {
+footer section.footer .responsive-box .footer-texto {
     display: flex;
 }
 
-footer div.responsive-box div.footer-texto p#copyright {
+footer section.footer .responsive-box .footer-texto p#copyright {
     font-size: 0.9rem;
     font-weight: 700;
-    display: flex;
-    align-items: center;
-    margin: 0 4% 0 15%;
+    align-self: center;
+    margin-right: 2rem;
+    margin-left: 8rem;
 }
 
-footer div.responsive-box div.footer-texto div.texto {
+footer section.footer .responsive-box .footer-texto .texto {
     color: grey;
     font-size: 0.7rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50vw;
+    width: auto;
 }
 
 /*---> RESPONSIVE FOOTER <---*/
-@media screen and (max-width: 1280px) {
-    footer div.icons-box {
-        margin: 0 0 0 5%;
+@media screen and (max-width: 1200px) {
+    footer section.footer .responsive-box .footer-texto p#copyright {
+        margin-left: 4rem;
     }
-    footer div.icons-box img {
+    footer section.footer .icons-box img {
         height: 20px;
-        margin: 10px;
     }
-    footer div.responsive-box div.footer-texto p#copyright {
-        margin: 0 4% 0 5%;
+}
+
+@media screen and (max-width: 992px) {
+    footer section.footer .responsive-box .footer-texto p#copyright {
+        margin-left: 2rem;
+    }
+    footer section.footer .icons-box img {
+        height: 20px;
+        margin: 15px 20px 15px 0;
     }
 }
 
 @media screen and (min-width: 768px) {
-    footer div.responsive-box div.button-box {
+    footer section.footer .responsive-box .button-box {
         display: none;
     }
 }
@@ -289,50 +317,56 @@ footer div.responsive-box div.footer-texto div.texto {
 @media screen and (max-width: 768px) {
     footer {
         background-color: white;
+    }
+    footer section.footer {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         width: 80vw;
-        margin: auto;
+        height: auto;
+        margin: 0 auto;
     }
-    footer div.icons-box {
+    footer section.footer .icons-box {
         background-color: #7FDBD4;
         display: flex;
-        width: 70vw;
-        margin: auto;
+        flex-direction: row;
+        width: 100%;
+        margin: 0 auto;
         align-items: center;
         justify-content: space-evenly;
-        padding: 10px 20px 10px 20px;
-        margin-top: 8vh;
-        margin-bottom: 4vh;
+        padding: 10px 20px;
+        margin-bottom: 3vh;
     }
-    footer div.icons-box img {
+    footer section.footer .icons-box img {
         height: 30px;
         margin: 0;
     }
-    footer div.responsive-box {
+    footer section.footer .responsive-box {
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
-        width: 70vw;
-        margin: auto;
+        justify-content: space-between;
+        width: 80vw;
+        margin: 0 auto;
     }
-    footer div.responsive-box div.footer-texto {
+    footer section.footer .responsive-box .footer-texto {
         display: flex;
         flex-direction: column;
-        margin-bottom: 2vh;
-        margin-right: 2%;
+        align-content: flex-start;
+        margin-bottom: 1vh;
     }
-    footer div.responsive-box div.footer-texto p#copyright {
+    footer section.footer .responsive-box .footer-texto p#copyright {
         color: black;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         font-weight: 700;
-        margin: 0 0 2% 0;
+        align-self: flex-start;
+        margin: 0;
+        margin-bottom: 0.5rem;
     }
-    footer div.responsive-box div.footer-texto div.texto p {
+    footer section.footer .responsive-box .footer-texto .texto p {
         color: grey;
         font-size: 0.7rem;
     }
-    footer div.responsive-box div.button-box a {
+    footer section.footer .responsive-box .button-box a {
         font-weight: 200;
         color: #CCCCCC;
         background-color: #333333;
@@ -342,9 +376,8 @@ footer div.responsive-box div.footer-texto div.texto {
     }
 }
 
-@media screen and (max-width: 414px) {
-    footer div.icons-box img {
+@media screen and (max-width: 576px) {
+    footer section.footer .icons-box img {
         height: 20px;
-        margin: 0;
     }
 }
